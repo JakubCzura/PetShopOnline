@@ -10,6 +10,7 @@ public static class PersistenceLayerRegistration
     public static IServiceCollection AddPersistenceDI(this IServiceCollection services,
                                                       IConfiguration configuration)
     {
+        services.AddJwtAuthentication();
         services.AddScoped<IUserRepository, UserRepository>();
 
         return services;

@@ -11,5 +11,5 @@ public interface IUserRepository
 
     public List<User> GetUsers { get; }
 
-    public int AddUser(User user);
+    public User AddUser(User user);
 }

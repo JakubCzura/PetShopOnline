@@ -17,5 +17,5 @@ public class UserRepository : IUserRepository
         new User()
     ];
 
-    public int AddUser(User user) => user.Id;
+    public User AddUser(User user) => user;
 }
