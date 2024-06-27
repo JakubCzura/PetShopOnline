@@ -24,4 +24,8 @@ public class UserController(IUserRepository userRepository) : ApiBaseController
     [Authorize(Roles = "User")]
     [HttpPost("user")]
     public IActionResult AddUser([FromBody] User user) => Ok(userRepository.AddUser(user));
+
+    [Authorize(Roles = "User")]
+    [HttpDelete("delete")]
+    public IActionResult DeleteUser([FromBody] User user) => Ok(userRepository.AddUser(user));
 }
