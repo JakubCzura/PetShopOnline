@@ -1,25 +1,23 @@
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//TODO: Implement authentication, look at UserService and AuthService for guidance
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddJwtBearer();
 
-var app = builder.Build();
+builder.Services.AddReverseProxy()
+                .LoadFromConfig(builder.Configuration.GetSection("ApiGateway"));
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+WebApplication app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseAuthentication();
 
-app.MapControllers();
+//Uncomment when authentication is implemented. Probably it will be added in other extension method
+//app.UseAuthorization();
+
+app.MapReverseProxy();
 
 app.Run();
