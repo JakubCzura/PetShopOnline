@@ -4,9 +4,9 @@
 
 ### Description
 The project consists of three microservices: <br>
-ApiGateway,<br>
-AuthService,<br>
-UserService.<br>
+ApiGateway - the purpose of the project. Api gateway which deals with proper routing the requests and their security.<br>
+AuthService - microservice which delivers tools necessary for authentication/authorization.<br>
+UserService - microservices which deals with user-related topics like creating new account or managing user details in database.<br>
 
 The purpose of the implementation is to send requests to ApiGateway that will communicate with AuthService and UserService.
 
