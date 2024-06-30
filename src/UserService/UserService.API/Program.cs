@@ -1,12 +1,10 @@
 using UserService.API.ExtensionMethods;
-using UserService.Application.ExtensionMethods;
 using UserService.Persistence.ExtensionMethods;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddApplicationDI(builder.Configuration);
-builder.Services.AddPersistenceDI(builder.Configuration);
+builder.Services.AddPersistenceDI();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

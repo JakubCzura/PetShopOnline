@@ -1,16 +1,21 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace AuthService.Application.ExtensionMethods;
 
+/// <summary>
+/// Class to register application layer dependencies.
+/// </summary>
 public static class ApplicationLayerRegistration
 {
-    public static IServiceCollection AddApplicationDI(this IServiceCollection services,
-                                                      IConfiguration configuration)
+    /// <summary>
+    /// Register application layer dependencies.
+    /// </summary>
+    /// <param name="services">Collection of dependency injection services.</param>
+    /// <returns><paramref name="services"/></returns>
+    public static IServiceCollection AddApplicationDI(this IServiceCollection services)
     {
         services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-
         return services;
     }
 }

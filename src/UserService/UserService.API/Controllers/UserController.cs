@@ -9,10 +9,9 @@ using UserService.Domain.Models.Entities;
 namespace UserService.API.Controllers;
 
 /// <summary>
-/// Just a simple controller to connect to fake repository.
-/// No CQRS, no MediatR, no AutoMapper etc. - just a simple controller.
+/// Controller for user operations.
 /// </summary>
-/// <param name="userRepository">Fake repository</param>
+/// <param name="userRepository">Fake user's database repository</param>
 [ApiVersion(ApiVersioningInfo.Version_1_0)]
 public class UserController(IUserRepository userRepository) : ApiBaseController
 {

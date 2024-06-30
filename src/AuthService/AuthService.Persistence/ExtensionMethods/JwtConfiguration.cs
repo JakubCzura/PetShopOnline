@@ -5,8 +5,16 @@ using System.Text;
 
 namespace AuthService.Persistence.ExtensionMethods;
 
+/// <summary>
+/// Class to configure JWT authentication.
+/// </summary>
 public static class JwtConfiguration
 {
+    /// <summary>
+    /// Configure JWT authentication.
+    /// </summary>
+    /// <param name="services">Collection of dependency injection services.</param>
+    /// <returns><paramref name="services"/></returns>
     public static IServiceCollection AddJwtAuthentication(this IServiceCollection services)
     {
         services.AddAuthentication(options =>

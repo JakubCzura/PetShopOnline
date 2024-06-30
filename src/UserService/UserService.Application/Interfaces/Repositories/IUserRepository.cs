@@ -4,6 +4,7 @@ namespace UserService.Application.Interfaces.Repositories;
 
 /// <summary>
 /// Let's imagine that this repository is connected to a database.
+/// It's designed to take care of <see cref="User"/> entity.
 /// </summary>
 public interface IUserRepository
 {

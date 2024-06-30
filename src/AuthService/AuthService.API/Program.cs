@@ -6,8 +6,8 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddInfrastructureDI(builder.Configuration);
-builder.Services.AddApplicationDI(builder.Configuration);
+builder.Services.AddInfrastructureDI();
+builder.Services.AddApplicationDI();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

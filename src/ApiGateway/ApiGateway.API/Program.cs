@@ -4,7 +4,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddPersistenceDI(builder.Configuration);
+builder.Services.AddPersistenceDI();
 
 builder.Services.AddReverseProxy()
                 .LoadFromConfig(builder.Configuration.GetSection("ApiGateway"));
