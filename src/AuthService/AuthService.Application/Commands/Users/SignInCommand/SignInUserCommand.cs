@@ -1,7 +1,7 @@
 ﻿using AuthService.Domain.Responses;
 using MediatR;
 
-namespace AuthService.Application.Commands.Users.SignUpCommand;
+namespace AuthService.Application.Commands.Users.SignInCommand;
 
 /// <summary>
 /// Command to sign in user.

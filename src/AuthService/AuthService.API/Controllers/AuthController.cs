@@ -1,7 +1,7 @@
 using Asp.Versioning;
 using AuthService.API.Controllers.Base;
 using AuthService.API.ExtensionMethods;
-using AuthService.Application.Commands.Users.SignUpCommand;
+using AuthService.Application.Commands.Users.SignInCommand;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +22,7 @@ public class AuthController(IMediator mediator) : ApiBaseController
     /// <returns>Information about new user added.</returns>
     [AllowAnonymous]
     [HttpPost("signin")]
-    public IActionResult SignUp([FromBody] SignInUserCommand command) => Ok(mediator.Send(command));
+    public IActionResult SignIn([FromBody] SignInUserCommand command) => Ok(mediator.Send(command));
 
     /// <summary>
     /// Return secret info about user.
