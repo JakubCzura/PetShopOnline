@@ -1,4 +1,6 @@
-### Simple demo application to show an idea how to implement authentication/authorization in microservices architecture using api gateway. <br> This application focus on back-end architecture and can be used with a front-end application to explore more authentication/authorization topics.
+## Simple demo application to show an idea how to implement authentication/authorization in microservices architecture using api gateway. 
+
+### This application focus on back-end architecture and can be used with a front-end application to explore more authentication/authorization topics.
 
 ### Description
 The project consists of three microservices: <br>
