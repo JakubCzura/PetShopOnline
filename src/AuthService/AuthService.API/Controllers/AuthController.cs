@@ -1,4 +1,6 @@
+using Asp.Versioning;
 using AuthService.API.Controllers.Base;
+using AuthService.API.ExtensionMethods;
 using AuthService.Application.Commands.Users.SignUpCommand;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -6,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.API.Controllers;
 
+[ApiVersion(ApiVersioningInfo.Version_1_0)]
 public class AuthController(IMediator mediator) : ApiBaseController
 {
     [AllowAnonymous]

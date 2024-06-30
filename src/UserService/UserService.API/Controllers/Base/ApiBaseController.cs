@@ -5,7 +5,7 @@ namespace UserService.API.Controllers.Base;
 
 [ApiController]
 [Authorize]
-[Route("api/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class ApiBaseController : ControllerBase
 {
 }

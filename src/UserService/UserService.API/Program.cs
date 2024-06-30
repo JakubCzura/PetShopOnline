@@ -1,3 +1,4 @@
+using UserService.API.ExtensionMethods;
 using UserService.Application.ExtensionMethods;
 using UserService.Persistence.ExtensionMethods;
 
@@ -10,6 +11,7 @@ builder.Services.AddPersistenceDI(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddApiVersion();
 builder.Services.AddSwaggerGen();
 
 WebApplication app = builder.Build();
@@ -22,6 +24,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

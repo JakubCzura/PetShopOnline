@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UserService.API.Controllers.Base;
+using UserService.API.ExtensionMethods;
 using UserService.Application.Interfaces.Repositories;
 using UserService.Domain.Models.Entities;
 
@@ -11,6 +13,7 @@ namespace UserService.API.Controllers;
 /// No CQRS, no MediatR, no AutoMapper etc. - just a simple controller.
 /// </summary>
 /// <param name="userRepository">Fake repository</param>
+[ApiVersion(ApiVersioningInfo.Version_1_0)]
 public class UserController(IUserRepository userRepository) : ApiBaseController
 {
     [AllowAnonymous]

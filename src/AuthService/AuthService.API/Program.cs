@@ -1,3 +1,4 @@
+using AuthService.API.ExtensionMethods;
 using AuthService.Application.ExtensionMethods;
 using AuthService.Persistence.ExtensionMethods;
 
@@ -11,6 +12,7 @@ builder.Services.AddApplicationDI(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddApiVersion();
 builder.Services.AddSwaggerGen();
 
 WebApplication app = builder.Build();
@@ -23,6 +25,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
