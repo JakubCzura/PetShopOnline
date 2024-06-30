@@ -5,13 +5,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+	
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="12.3.0" />
+	</ItemGroup>
+	
   <ItemGroup>
-	<PackageReference Include="MediatR" Version="12.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\UserService.Domain\UserService.Domain.csproj" />
+    <ProjectReference Include="..\AccessoryService.Domain\AccessoryService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,11 @@
-using UserService.API.ExtensionMethods;
-using UserService.Persistence.ExtensionMethods;
-using UserService.Application.ExtensionMethods;
+using AccessoryService.API.ExtensionMethods;
+using AccessoryService.Application.ExtensionMethods;
+using AccessoryService.Persistence.ExtensionMethods;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddPersistenceDI();
 builder.Services.AddApplicationDI();
 
