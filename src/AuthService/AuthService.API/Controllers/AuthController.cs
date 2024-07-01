@@ -1,7 +1,9 @@
 using Asp.Versioning;
 using AuthService.API.Controllers.Base;
 using AuthService.API.ExtensionMethods;
-using AuthService.Application.Commands.Users.SignInCommand;
+using AuthService.Application.Commands.Users.AuthorizeUser;
+using AuthService.Application.Commands.Users.CreateSecretInfo;
+using AuthService.Application.Queries.Users.GetAll;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,13 +18,13 @@ namespace AuthService.API.Controllers;
 public class AuthController(IMediator mediator) : ApiBaseController
 {
     /// <summary>
-    /// Add new user to database.
+    /// Authorize user and return jwt token.
     /// </summary>
     /// <param name="command">Command with user's details to add user to database.</param>
     /// <returns>Information about new user added.</returns>
     [AllowAnonymous]
-    [HttpPost("signin")]
-    public IActionResult SignIn([FromBody] SignInUserCommand command) => Ok(mediator.Send(command));
+    [HttpPost("authorize")]
+    public IActionResult SignIn([FromBody] AuthorizeUserCommand command) => Ok(mediator.Send(command));
 
     /// <summary>
     /// Return secret info about user.
@@ -30,7 +32,7 @@ public class AuthController(IMediator mediator) : ApiBaseController
     /// <returns>Secret info about user.</returns>
     [Authorize]
     [HttpGet("secret")]
-    public IActionResult GetSecretInfo() => Ok("This is a secret info");
+    public IActionResult GetSecretInfo() => Ok(mediator.Send(new GetAllSecretInfosQuery()));
 
     /// <summary>
     /// Create secret info about user and adds it to database.
@@ -38,5 +40,6 @@ public class AuthController(IMediator mediator) : ApiBaseController
     /// <returns>Secret that has been added to database.</returns>
     [Authorize(Roles = "User")]
     [HttpPost("secret")]
-    public IActionResult CreateSecretInfo() => Ok("Secret info was written to database");
+    public IActionResult CreateSecretInfo([FromBody] CreateSecretInfoCommand createSecretInfoCommand) 
+        => Ok(mediator.Send(createSecretInfoCommand));
 }
