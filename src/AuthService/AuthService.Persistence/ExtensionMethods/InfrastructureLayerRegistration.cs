@@ -1,6 +1,7 @@
 ﻿using AuthService.Application.Interfaces.Auth;
 using AuthService.Application.Interfaces.Repositories;
 using AuthService.Persistence.Auth;
+using AuthService.Persistence.Persistence;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AuthService.Persistence.ExtensionMethods;
@@ -18,7 +19,7 @@ public static class InfrastructureLayerRegistration
     public static IServiceCollection AddInfrastructureDI(this IServiceCollection services)
     {
         services.AddScoped<IJwtTokenService, JwtTokenService>();
-        services.AddScoped<IUserSecretRepository, IUserSecretRepository>();
+        services.AddScoped<IUserSecretRepository, UserSecretRepository>();
         services.AddJwtAuthentication();
 
         return services;

@@ -21,7 +21,7 @@ public class ItemController(IMediator mediator) : ApiBaseController
     /// </summary>
     /// <paoam name="id">Item's id.</param>
     /// <returns>Item if found, otherwise null.<returns>
-    [Authorize("User")]
+    [Authorize(Roles = "User")]
     [HttpGet("{id:int}")]
     [ProducesResponseType(200, Type = typeof(Item))]
     public IActionResult GetItem([FromRoute] int id) => Ok(mediator.Send(new GetItemByIdQuery(id)));
@@ -30,7 +30,7 @@ public class ItemController(IMediator mediator) : ApiBaseController
     /// Returns all items.
     /// </summary>
     /// <returns>All items.</returns>
-    [Authorize("User")]
+    [Authorize(Roles = "User")]
     [HttpGet("all")]
     [ProducesResponseType(200, Type = typeof(IEnumerable<Item>))]
     public IActionResult GetAllItems() => Ok(mediator.Send(new GetAllItemsQuery()));
