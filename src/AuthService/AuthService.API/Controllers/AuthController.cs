@@ -4,6 +4,8 @@ using AuthService.API.ExtensionMethods;
 using AuthService.Application.Commands.Users.AuthorizeUser;
 using AuthService.Application.Commands.Users.CreateSecretInfo;
 using AuthService.Application.Queries.Users.GetAll;
+using AuthService.Domain.Entities;
+using AuthService.Domain.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +26,8 @@ public class AuthController(IMediator mediator) : ApiBaseController
     /// <returns>Information about new user added.</returns>
     [AllowAnonymous]
     [HttpPost("authorize")]
-    public IActionResult SignIn([FromBody] AuthorizeUserCommand command) => Ok(mediator.Send(command));
+    [ProducesResponseType(200, Type = typeof(AuthorizeUserResponse))]
+    public IActionResult Authorize([FromBody] AuthorizeUserCommand command) => Ok(mediator.Send(command));
 
     /// <summary>
     /// Return secret info about user.
@@ -32,6 +35,7 @@ public class AuthController(IMediator mediator) : ApiBaseController
     /// <returns>Secret info about user.</returns>
     [Authorize]
     [HttpGet("secret")]
+    [ProducesResponseType(200, Type = typeof(IEnumerable<UserSecret>))]
     public IActionResult GetSecretInfo() => Ok(mediator.Send(new GetAllSecretInfosQuery()));
 
     /// <summary>
@@ -40,6 +44,7 @@ public class AuthController(IMediator mediator) : ApiBaseController
     /// <returns>Secret that has been added to database.</returns>
     [Authorize(Roles = "User")]
     [HttpPost("secret")]
+    [ProducesResponseType(200, Type = typeof(UserSecret))]
     public IActionResult CreateSecretInfo([FromBody] CreateSecretInfoCommand createSecretInfoCommand) 
         => Ok(mediator.Send(createSecretInfoCommand));
 }
