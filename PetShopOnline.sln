@@ -33,13 +33,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway.Persistence", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccessoryService", "AccessoryService", "{145885FB-FEA5-4422-8186-D1914BE84074}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessoryService.API", "src\AccessoryService\AccessoryService.API\AccessoryService.API.csproj", "{6EA1AA61-AB1D-48DF-8708-7CBD85AE15EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessoryService.API", "src\AccessoryService\AccessoryService.API\AccessoryService.API.csproj", "{6EA1AA61-AB1D-48DF-8708-7CBD85AE15EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessoryService.Persistence", "src\AccessoryService\AccessoryService.Persistence\AccessoryService.Persistence.csproj", "{4C08740E-C815-4894-982C-A0E14E29B135}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessoryService.Persistence", "src\AccessoryService\AccessoryService.Persistence\AccessoryService.Persistence.csproj", "{4C08740E-C815-4894-982C-A0E14E29B135}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessoryService.Application", "src\AccessoryService\AccessoryService.Application\AccessoryService.Application.csproj", "{ABE7B446-685A-49BA-8ABC-3E8753DD4E94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessoryService.Application", "src\AccessoryService\AccessoryService.Application\AccessoryService.Application.csproj", "{ABE7B446-685A-49BA-8ABC-3E8753DD4E94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessoryService.Domain", "src\AccessoryService\AccessoryService.Domain\AccessoryService.Domain.csproj", "{50286F2A-4330-444D-82CD-DF98033D5C74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessoryService.Domain", "src\AccessoryService\AccessoryService.Domain\AccessoryService.Domain.csproj", "{50286F2A-4330-444D-82CD-DF98033D5C74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
