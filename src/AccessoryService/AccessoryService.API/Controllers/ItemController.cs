@@ -1,7 +1,7 @@
 ﻿using AccessoryService.API.Controllers.Base;
 using AccessoryService.API.ExtensionMethods;
-using AccessoryService.Application.Queries.Item.GetAll;
-using AccessoryService.Application.Queries.Item.GetItemById;
+using AccessoryService.Application.Queries.Items.GetAll;
+using AccessoryService.Application.Queries.Items.GetItemById;
 using Asp.Versioning;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
