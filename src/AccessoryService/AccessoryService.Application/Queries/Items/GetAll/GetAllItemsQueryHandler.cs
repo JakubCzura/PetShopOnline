@@ -4,8 +4,20 @@ using AccessoryService.Domain.Entities;
 
 namespace AccessoryService.Application.Queries.Items.GetAll;
 
-public class GetAllItemsQueryHandler(IItemRepository itemRepository) : IRequestHandler<GetAllItemsQuery, IEnumerable<Item>>
+/// <summary>
+/// Handler to get all items from database.
+/// </summary>
+/// <param name="itemRepository">Repository for <see cref="Item"/></param>
+public class GetAllItemsQueryHandler(IItemRepository itemRepository) 
+    : IRequestHandler<GetAllItemsQuery, IEnumerable<Item>>
 {
-    public Task<IEnumerable<Item>> Handle(GetAllItemsQuery request, CancellationToken cancellationToken)
+   /// <summary>
+   /// Returns all items from database.
+   /// </summary>
+   /// <param name="request">Request for getting all items.</param>
+   /// <param name="cancellationToken">Token to cancel asynchronous operations.</param>
+   /// <returns>All items from database.</returns>
+    public Task<IEnumerable<Item>> Handle(GetAllItemsQuery request,
+                                          CancellationToken cancellationToken)
         => Task.FromResult(itemRepository.GetAll());
 }
