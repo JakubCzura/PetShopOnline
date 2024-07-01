@@ -45,6 +45,6 @@ public class AuthController(IMediator mediator) : ApiBaseController
     [Authorize(Roles = "User")]
     [HttpPost("secret")]
     [ProducesResponseType(200, Type = typeof(UserSecret))]
-    public IActionResult CreateSecretInfo([FromBody] CreateSecretInfoCommand createSecretInfoCommand) 
+    public IActionResult CreateSecretInfo([FromBody] CreateSecretInfoCommand createSecretInfoCommand)
         => Ok(mediator.Send(createSecretInfoCommand));
 }

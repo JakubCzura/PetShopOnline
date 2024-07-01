@@ -1,6 +1,6 @@
 ﻿using AccessoryService.Application.Interfaces.Repositories;
-using MediatR;
 using AccessoryService.Domain.Entities;
+using MediatR;
 
 namespace AccessoryService.Application.Queries.Items.GetItemById;
 
@@ -8,7 +8,7 @@ namespace AccessoryService.Application.Queries.Items.GetItemById;
 /// Handler to get an item by its Id.
 /// </summary>
 /// <param name="itemRepository">Repository for <see cref="Item"/></param>
-public class GetItemByIdQueryHandler(IItemRepository itemRepository) 
+public class GetItemByIdQueryHandler(IItemRepository itemRepository)
     : IRequestHandler<GetItemByIdQuery, Item?>
 {
     /// <summary>
@@ -17,7 +17,7 @@ public class GetItemByIdQueryHandler(IItemRepository itemRepository)
     /// <param name="request">Request to get an item by its Id.</param>
     /// <param name="cancellationToken">Token to cancel asynchronous operations.</param>
     /// <returns>Item if found, otherwise null.</returns>
-    public Task<Item?> Handle(GetItemByIdQuery request, 
+    public Task<Item?> Handle(GetItemByIdQuery request,
                               CancellationToken cancellationToken)
-        => Task.FromResult(itemRepository.GetById(request.Id)); 
+        => Task.FromResult(itemRepository.GetById(request.Id));
 }

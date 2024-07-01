@@ -1,6 +1,6 @@
 using UserService.API.ExtensionMethods;
-using UserService.Persistence.ExtensionMethods;
 using UserService.Application.ExtensionMethods;
+using UserService.Persistence.ExtensionMethods;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

@@ -1,5 +1,5 @@
-﻿using MediatR;
-using AccessoryService.Domain.Entities;
+﻿using AccessoryService.Domain.Entities;
+using MediatR;
 
 namespace AccessoryService.Application.Queries.Items.GetAll;
 

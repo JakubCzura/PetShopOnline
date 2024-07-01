@@ -12,7 +12,7 @@ internal class ItemRepository : IItemRepository
         new Item { Id = 3, Name = "Dog's shoes", Description = "Good for winter", Price = 3.99m, Type = ItemType.Clothes },
         new Item { Id = 4, Name = "Tent", Description = "Sleep well", Price = 100.29m, Type = ItemType.Other } ];
 
-    public Item? GetById(int id) 
+    public Item? GetById(int id)
         => _items.FirstOrDefault(x => x.Id == id);
 
     public IEnumerable<Item> GetAll() => _items;

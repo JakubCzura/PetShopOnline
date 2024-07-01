@@ -12,7 +12,7 @@ public interface IUserSecretRepository
     /// </summary>
     /// <returns>All user secrets.</returns>
     IEnumerable<UserSecret> GetAll();
-    
+
     /// <summary>
     /// Adds user secret to database.
     /// </summary>
