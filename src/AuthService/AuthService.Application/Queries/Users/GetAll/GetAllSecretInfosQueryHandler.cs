@@ -7,7 +7,7 @@ namespace AuthService.Application.Queries.Users.GetAll;
 /// <summary>
 /// Handler to get secret info about users.
 /// </summary>
-public class GetAllSecretInfosQueryHandler(IUserSecretRepository userSecretRepository) 
+public class GetAllSecretInfosQueryHandler(IUserSecretRepository userSecretRepository)
     : IRequestHandler<GetAllSecretInfosQuery, IEnumerable<UserSecret>>
 {
     /// <summary>
@@ -15,9 +15,8 @@ public class GetAllSecretInfosQueryHandler(IUserSecretRepository userSecretRepos
     /// </summary>
     /// <param name="request">Request to get users' secrets from database.</param>
     /// <param name="cancellationToken">Token to cancel asynchronous operations.</param>
-    /// <returns><see cref="Task"/></returns>
-    public Task<IEnumerable<UserSecret>> Handle(GetAllSecretInfosQuery request, 
-                                                CancellationToken cancellationToken)  
+    /// <returns>List of users' secrets.</returns>
+    public Task<IEnumerable<UserSecret>> Handle(GetAllSecretInfosQuery request,
+                                                CancellationToken cancellationToken)
         => Task.FromResult(userSecretRepository.GetAll());
-    
 }

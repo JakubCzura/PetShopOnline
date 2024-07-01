@@ -15,7 +15,7 @@ public class AuthorizeUserCommandHandler(IJwtTokenService jwtTokenService) : IRe
     /// </summary>
     /// <param name="request">Command with details to authorize user.</param>
     /// <param name="cancellationToken">Token to cancell asynchronous operation.</param>
-    /// <returns><see cref="Task"/></returns>
+    /// <returns>Response with jwt token.</returns>
     public Task<AuthorizeUserResponse> Handle(AuthorizeUserCommand request,
                                               CancellationToken cancellationToken)
     {

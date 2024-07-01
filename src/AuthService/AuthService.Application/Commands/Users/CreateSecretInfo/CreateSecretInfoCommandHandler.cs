@@ -15,8 +15,8 @@ public class CreateSecretInfoCommandHandler(IUserSecretRepository userSecretRepo
     /// </summary>
     /// <param name="request">Request with details to add secret info to database.</param>
     /// <param name="cancellationToken">Token to cancel asynchronous operations.</param>
-    /// <returns><see cref="Task"/></returns>
+    /// <returns>Secret that was added to database.</returns>
     public Task<UserSecret> Handle(CreateSecretInfoCommand request,
-                               CancellationToken cancellationToken)
+                                   CancellationToken cancellationToken)
         => Task.FromResult(userSecretRepository.Add(new() { SecretInfo = request.SecretInfo }));
 }
